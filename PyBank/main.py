@@ -9,11 +9,6 @@ profit_change = []
 with open(budget_csv, "r") as csv_file: 
      reader = csv.reader(csv_file, delimiter=",")
      csv_header = next(reader)
-     #months = len(list(reader))
-     
-     
-
-    
      
      for p_l in reader:
          profit_losses.append(int(p_l[1]))

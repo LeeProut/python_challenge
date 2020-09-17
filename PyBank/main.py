@@ -20,13 +20,18 @@ with open(budget_csv, "r") as csv_file:
      
 t_months = len(months)
 sum_profit_losses = sum(profit_losses)
-average_change = (sum(profit_change) / len(profit_change))
+average_change = round(sum(profit_change) / len(profit_change),2)
+max_profit_increase = max(profit_change)
+greatest_profit_decrease = min(profit_change)
+
 
 print("Financial Analysis")
 print("---------------------------------------")
 print(f"Total Months: {t_months}")
 print (f"Total: {sum_profit_losses}")
 print (f"Average Change: {average_change}")
+print (f"Greatest Increase in Profits: {max_profit_increase}")
+print (f"Greatest Decrease in Profits: {greatest_profit_decrease}")
 
     #  net = []
     #  for row in reader:

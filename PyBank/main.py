@@ -61,7 +61,6 @@ f"Greatest Decrease in Profits: {month_greatest_profit_decrease} (${greatest_pro
 )
 
 file = os.path.join(".", "Analysis", "PyBank_analysis.txt")
-#file = "Analysis/PyBank_analysis.txt"
 with open (file, "w") as text: 
     text.write(text_output)
     text.close     

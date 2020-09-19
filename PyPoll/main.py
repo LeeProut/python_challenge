@@ -52,16 +52,20 @@ text_output = (
     "Election Results"
     "-----------------------"
 f"Total Votes: {Total_votes}"
-"-----------------------"
+    "-----------------------"
 candidate_info,"-----------------------" 
 f"Winner: {most_votes}"  
-"-----------------------" 
+    "-----------------------" 
 )
 
-file = os.path.join (".", "Analysis", "PyPoll_analysis.txt")
+file = os.path.join(".", "Analysis", "PyPoll_analysis.txt")
 with open (file, "w") as text: 
     text.write(text_output)
-    text.close 
+    text.close
+    
+
+
+
 
 
 

@@ -13,23 +13,40 @@ with open(election_csv, "r") as csv_file:
     csv_header = next(reader)
 
     for row in reader:
-        t_voters = (voter_ID.append(row[0]))  
-        
-        
-    candidate = row[2]    
-    for row in reader:
+        voter_ID.append(row[0])
+
+        Total_votes = len(voter_ID)  
+
+        candidate = row[2]
+
         if candidate not in Candidate_list: 
             Candidate_list.append(candidate)
         if candidate not in Vote_count: 
             Vote_count[candidate] = 1
         else:
             Vote_count[candidate] = Vote_count[candidate] + 1
+    
+    
+winner = max(Vote_count.values())
+for key, value in Vote_count.items():
+    if value == winner:
+        most_votes = key
+        break
 
-    for candidate in Candidate_list: 
-        print((candidate, Vote_count[candidate], Vote_count[candidate] / len(voter_ID)) * 100)  
-
+candidate_info = " "
+for candidate in Candidate_list: 
+    Vote_percentage = (Vote_count[candidate] / len(voter_ID) * 100)
+    candidate_info +=(f"{candidate}: {Vote_percentage:.3f}% ({Vote_count[candidate]})\n")
+    
     
 print("Election Results")
-print("-----------------------------------------")
-print(len(voter_ID))
+print("-----------------------")
+print(f"Total Votes: {Total_votes}")
+print("-----------------------")
+print(candidate_info,"-----------------------") 
+print(f"Winner: {most_votes}")  
+print("-----------------------")  
+
+
+
 

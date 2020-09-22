@@ -49,13 +49,13 @@ print("-----------------------")
 
 #to print to a text file
 text_output = (
-    "Election Results"
-    "-----------------------"
-f"Total Votes: {Total_votes}"
-    "-----------------------"
-candidate_info,"-----------------------" 
-f"Winner: {most_votes}"  
-    "-----------------------" 
+    "Election Results\n"
+    "-----------------------\n"
+f"Total Votes: {Total_votes}\n"
+    "-----------------------\n"
+f"{candidate_info}-----------------------\n" 
+f"Winner: {most_votes}\n"  
+    "-----------------------\n" 
 )
 
 file = os.path.join(".", "Analysis", "PyPoll_analysis.txt")
